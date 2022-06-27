@@ -1,0 +1,24 @@
+---
+- name: Installing Packages
+  hosts: web
+  become: true
+  user: ubuntu
+  gather_facts: false
+  
+  tasks: 
+  - name: installing wget
+    apt: 
+      name: wget
+      state: latest
+
+  - name: installing Apache2
+    apt: 
+      name: ["apache2"]
+      state: latest
+      update_cache: yes
+
+
+
+
+
+
